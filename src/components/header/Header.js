@@ -9,10 +9,11 @@ function Header(){
          <Navbar fixed="top" bg="dark" data-bs-theme="dark">
         <Container>
           <Navbar.Brand href="#home">Movies</Navbar.Brand>
-          <Nav className="me-auto">
-            <Link to ="/home">Home</Link>
+          <Nav className="me-auto link">
+            <Link  className="l" to ="/">Home</Link>
+            <Link  className="l" to ="/favList">FavList</Link>
             {/* <Nav.Link to="/home">Home</Nav.Link> */}
-            <Nav.Link href="/">Fav List</Nav.Link>
+            {/* <Nav.Link href="/">Fav List</Nav.Link> */}
             {/* <Nav.Link href="#pricing">Pricing</Nav.Link> */}
           </Nav>
         </Container>
