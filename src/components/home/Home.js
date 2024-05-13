@@ -1,12 +1,12 @@
 import './Home.css'
-// import Header from '../components/header/Header'
 import Header from '../header/Header';
 import { useEffect, useState } from 'react';
 import MovieList from '../movieList/MovieList';
 function Home(props){
     const [trendingMovies,setTrendingMovies]=useState([]);
     const sendReq= (async ()=>{
-        const serverURL ='https://movies-library-6ldd.onrender.com/trending'
+        const serverURL ='https://movies-library-6ldd.onrender.com/trending';
+        // const serverURL ='http://localhost:3000/trending';
         const res= await fetch(serverURL);
         const data= await res.json();
         setTrendingMovies(data)

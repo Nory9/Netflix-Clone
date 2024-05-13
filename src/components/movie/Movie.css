@@ -1,7 +1,7 @@
 .card1{
     margin: 20px;
-    /* display: flex;
-    flex-direction: column;
-    flex-wrap: wrap; */
+}
 
+.c{
+    background-color: #3c2e2e;
 }

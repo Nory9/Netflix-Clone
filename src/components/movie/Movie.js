@@ -5,8 +5,8 @@ function Movie(props){
     return(
 
 <div className='card1'>
-<Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={props.poster} />
+<Card  classNmae="c" style={{ width: '18rem' ,backgroundColor: '#f3f3f3'}}>
+      <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w500${props.poster}`} />
       <Card.Body>
         <Card.Title>{props.title}</Card.Title>
         <Card.Text>

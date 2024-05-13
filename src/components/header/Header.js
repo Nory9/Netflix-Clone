@@ -10,7 +10,7 @@ function Header(){
         <Container>
           <Navbar.Brand href="#home">Movies</Navbar.Brand>
           <Nav className="me-auto link">
-            <Link  className="l" to ="/home">Home</Link>
+            <Link  className="l" to ="/">Home</Link>
             <Link  className="l" to ="/favList">FavList</Link>
             {/* <Nav.Link to="/home">Home</Nav.Link> */}
             {/* <Nav.Link href="/">Fav List</Nav.Link> */}
