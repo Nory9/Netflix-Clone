@@ -6,7 +6,7 @@ import {Link} from "react-router-dom"
 function Header(){
     return(
         <>
-         <Navbar fixed="top" bg="dark" data-bs-theme="dark">
+         <Navbar fixed="top"  data-bs-theme="dark" className='navbar'>
         <Container>
           <Navbar.Brand href="#home">Movies</Navbar.Brand>
           <Nav className="me-auto link">
