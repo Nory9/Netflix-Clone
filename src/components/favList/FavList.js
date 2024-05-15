@@ -7,8 +7,8 @@ function FavList({ jsonRes }) {
      const [favMovies, setFavMovies] = useState([]);
 
      const sendReq = async () => {
-        //  const serverURL = `https://movies-library-6ldd.onrender.com/allMovies`;
-           const serverURL = `http://localhost:3001/allMovies`;
+          const serverURL = `https://movies-library-6ldd.onrender.com/allMovies`;
+          // const serverURL = `http://localhost:3001/allMovies`;
           const res = await fetch(serverURL);
           const jsonRes = await res.json();
           setFavMovies(jsonRes);
@@ -18,8 +18,8 @@ function FavList({ jsonRes }) {
      }, []);
      console.log(favMovies);
      const deleteItem = async (id) => {
-       //   const res = await fetch(`https://movies-library-6ldd.onrender.com/deelteMovie/${id}`, { method: "DELETE" });
-           const res = await fetch(`http://localhost:3001/deelteMovie/${id}`, { method: "DELETE" });
+          const res = await fetch(`https://movies-library-6ldd.onrender.com/deelteMovie/${id}`, { method: "DELETE" });
+       //    const res = await fetch(`http://localhost:3001/deelteMovie/${id}`, { method: "DELETE" });
           if (res.ok) {
                setFavMovies((prevMovies) => prevMovies.filter(movie => movie.id !== id));
           }
@@ -34,8 +34,8 @@ function FavList({ jsonRes }) {
           });
           setFavMovies(updatedMovies);
 
-        //  const serverURL = `https://movies-library-6ldd.onrender.com/updateMovie/${movieId}`;
-           const serverURL = `http://localhost:3001/updateMovie/${movieId}`;
+        const serverURL = `https://movies-library-6ldd.onrender.com/updateMovie/${movieId}`;
+          // const serverURL = `http://localhost:3001/updateMovie/${movieId}`;
           const res = await fetch(serverURL, {
                method: "PUT",
                headers: {

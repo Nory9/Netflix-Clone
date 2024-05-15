@@ -13,8 +13,8 @@ function ModalMovie(props){
   const [flag,setFlag]=useState(false);
   const addToFav = async () => {
     // console.log(movie); https://movies-library-6ldd.onrender.com
-    const serverURL = `http://localhost:3001/addMovie`;
-    // const serverURL = `https://movies-library-6ldd.onrender.com/addMovie`;
+   // const serverURL = `http://localhost:3001/addMovie`;
+     const serverURL = `https://movies-library-6ldd.onrender.com/addMovie`;
     const mov = {
        id: props.clickedItem.id,
       title: props.clickedItem.title,
