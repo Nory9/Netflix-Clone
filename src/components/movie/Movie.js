@@ -12,9 +12,11 @@ function Movie(props){
 // console.log(props)
   const handleClose = () => {
     setShow(false)
-    setClickedItem(props)
+   
   };
-  const handleShow = () => setShow(true);
+  const handleShow = () => {setShow(true)
+     setClickedItem(props)
+  };
     // console.log("Preview Text:", previewText);
     // console.log(" Text:", props.overview);
     return(
