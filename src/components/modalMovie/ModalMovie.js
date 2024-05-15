@@ -10,28 +10,38 @@ function ModalMovie(props){
   console.log('Clicked item:', props.clickedItem);
 
   const [comment, setComment] = useState('');
-  const addToFav = async (movie) => {
-    console.log(movie);
-    const serverURL = `https://movies-library-6ldd.onrender.com/addMovie`;
+  const [flag,setFlag]=useState(false);
+  const addToFav = async () => {
+    // console.log(movie); https://movies-library-6ldd.onrender.com
+    const serverURL = `http://localhost:3001/addMovie`;
+    // const serverURL = `https://movies-library-6ldd.onrender.com/addMovie`;
     const mov = {
-       id: movie.id,
-      title: movie.title,
+       id: props.clickedItem.id,
+      title: props.clickedItem.title,
        genre: "",
-     overview: movie.overview,
-     release_date: movie.date,
-      poster: `https://image.tmdb.org/t/p/w500${movie.poster}`,      
+     overview: props.clickedItem.overview,
+     release_date: props.clickedItem.date,
+      poster: `https://image.tmdb.org/t/p/w500${props.clickedItem.poster}`,      
       comment: comment
-    };
-    console.log(movie)
-    // try {
-      const response = await axios.post(serverURL, mov);
-      console.log('Server response:', response.data);
-    // } catch (error) {
-    //   console.error('Failed to add to favorites:', error);
-    // }
-};
+       };
+    // console.log(movie)
+      try {
+       const response = await axios.post(serverURL, mov);
+       console.log('Server response:', response.data);
+       props.handleClose();
+       setFlag(true);
+      }
+      catch (error) {
+       console.error('the Movie is already in Fav list ', error);
+     }
+    //  props.handleClose()
+      };
+      const handleCloseFlagModal = () => {
+        setFlag(false);
+      };
 
     return (
+      <>
     <Modal
     show={props.show}
     onHide={props.handleClose}
@@ -52,7 +62,7 @@ function ModalMovie(props){
      {/* {props.clickedItem.overview} */}
     </Modal.Body>
     <Modal.Footer>
-      <Button variant="secondary" onClick={()=>addToFav(props.clickedItem)}>
+      <Button variant="secondary" onClick={()=>addToFav()}>
       💗
       </Button>
       <Button variant="secondary" onClick={props.handleClose}>
@@ -61,6 +71,18 @@ function ModalMovie(props){
       {/* <Button variant="primary">Understood</Button> */}
     </Modal.Footer>
   </Modal>
+  {flag && (
+        <Modal show={flag} onHide={handleCloseFlagModal}>
+          <Modal.Header closeButton></Modal.Header>
+          <Modal.Body>
+            <p>The movie is added to favorites.</p>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleCloseFlagModal}>Close</Button>
+          </Modal.Footer>
+        </Modal>
+      )}
+  </>
   );
 }
 

@@ -1,0 +1,22 @@
+.movie-card {
+    margin: 20px;  
+}
+
+.ca{
+     margin-top: 100px; 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btns{
+    display: flex;
+    justify-content: space-around;
+}
+.btn{
+    background-color: #3d3c56;
+}
+.d:hover{
+    background-color: red;
+}
